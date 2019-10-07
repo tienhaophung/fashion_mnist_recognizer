@@ -26,6 +26,7 @@ Em sẽ dựa vào độ chính xác trên tập val cho mỗi model để chọ
 
 ![Network architecture](model.png)
 
+Model gồm 2 CONV + 2 FC:
 - CONV: filter size (3x3 hoặc 5x5), padding 'SAME' và activation function Relu
 - Pool layer: stride = 2
 - FC1: vector 1024 chiều
