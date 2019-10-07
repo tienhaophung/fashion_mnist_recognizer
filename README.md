@@ -22,3 +22,5 @@ Với những lần thực nghiệm ở từng kiến trúc mạng, em đã đi�
 - num_epoches: số lần học (Ví dụ: 50, 80, 100)
 - batch_size: 32 hoặc 64
 - keep_prob: dùng cho dropout (0.5, 0.6) có tác dụng giảm bớt sự lệ thuộc của network vào một số node nhất định và cũng dùng để regularization nhằm tránh overfitting.
+
+**Đồng thời, em có soạn một file .ipynp để minh hoạ trực quan quá trình làm.**
