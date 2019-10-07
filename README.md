@@ -24,7 +24,7 @@ Shuffle training data để chia tập train thành tập train 50000 ảnh và 
 ## Quá trình cải tiến
 Em sẽ dựa vào độ chính xác trên tập val cho mỗi model để chọn ra model với độ chính xác cao nhất làm model cuối cùng.
 
-![Network architecture](https://drive.google.com/open?id=1jQFR7ROq_6ZO0R_GsJW5X7zyYI0T1S4g)
+![Network architecture](model.png)
 
 ### Kiến trúc mạng 1:
 Mỗi CONV block bao gồm: Conv -> Relu và Dropout được dùng như regularization trước FC2.
