@@ -26,8 +26,10 @@ Em sẽ dựa vào độ chính xác trên tập val cho mỗi model để chọ
 
 ![Network architecture](model.png)
 
-FC1: vector 1024 chiều
-FC2: vector 10 chiều
+- CONV: filter size (3x3 hoặc 5x5), padding 'SAME' và activation function Relu
+- Pool layer: stride = 2
+- FC1: vector 1024 chiều
+- FC2: vector 10 chiều
 
 ### Kiến trúc mạng 1:
 Mỗi CONV block bao gồm: Conv -> Relu và Dropout được dùng như regularization trước FC2.
@@ -48,17 +50,16 @@ _, _, params = fit_model(X_train, Y_train, X_val, Y_val, \
                          no_epochs=3, learning_rate = 1e-4, keep_prob_input=0.5, weight_decay=5e-4, \
                          minibatch_size=50, plot_learning_curve=True, model_name=dtime, model_number=1)
 ```
-Với, model_number là 0 hoặc 1. Chỉ thị kiến trúc mạng cần dùng
+Với, model_number (0 hoặc 1): Chỉ thị kiến trúc mạng cần dùng
 
 ## Evaluate:
-Với, model_number là 0 hoặc 1. Chỉ thị kiến trúc mạng cần dùng 
 ```python
 evaluate(model_meta_file=path+'/'+dtime+'-1000.meta', X_test, Y_test)
 ```
 Tham số:
-  model_meta_file: của pretrained model
-  X_test: data test
-  Y_test: lables của tập test
+- model_meta_file: của pretrained model
+- X_test: data test
+- Y_test: lables của tập test
   
 ## Chạy commandline
 ```
