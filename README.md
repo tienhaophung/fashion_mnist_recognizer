@@ -26,6 +26,9 @@ Em sẽ dựa vào độ chính xác trên tập val cho mỗi model để chọ
 
 ![Network architecture](model.png)
 
+FC1: vector 1024 chiều
+FC2: vector 10 chiều
+
 ### Kiến trúc mạng 1:
 Mỗi CONV block bao gồm: Conv -> Relu và Dropout được dùng như regularization trước FC2.
 ### Kiến trúc mạng 2:
@@ -38,5 +41,28 @@ Với những lần thực nghiệm ở từng kiến trúc mạng, em đã đi�
 - num_epoches: số lần học (Ví dụ: 50, 80, 100)
 - batch_size: 32 hoặc 64
 - keep_prob: dùng cho dropout (0.5, 0.6) có tác dụng giảm bớt sự lệ thuộc của network vào một số node nhất định và cũng dùng để regularization nhằm tránh overfitting.
+
+## Fit model:
+```python
+_, _, params = fit_model(X_train, Y_train, X_val, Y_val, \
+                         no_epochs=3, learning_rate = 1e-4, keep_prob_input=0.5, weight_decay=5e-4, \
+                         minibatch_size=50, plot_learning_curve=True, model_name=dtime, model_number=1)
+```
+Với, model_number là 0 hoặc 1. Chỉ thị kiến trúc mạng cần dùng
+
+## Evaluate:
+Với, model_number là 0 hoặc 1. Chỉ thị kiến trúc mạng cần dùng 
+```python
+evaluate(model_meta_file=path+'/'+dtime+'-1000.meta', X_test, Y_test)
+```
+Tham số:
+  model_meta_file: của pretrained model
+  X_test: data test
+  Y_test: lables của tập test
+  
+## Chạy commandline
+```
+python 1612174.py -train "Training set files (.csv)" -test "Test set files (.csv)"
+```
 
 **Đồng thời, em có soạn một file .ipynp để minh hoạ trực quan quá trình làm.**
