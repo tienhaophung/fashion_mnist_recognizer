@@ -5,10 +5,26 @@ First lab of Computer Vision in Applications course. Designing a deep network (C
 ```pip install -r requirements.txt```
 
 ## Quá trình chuẩn bị dữ liệu:
-Đối với dữ liệu có tổng cộng 60000 ảnh (28x28) trong training set và 10000 ảnh (28x28) trong test set. Em đã chia tập train thành tập train 50000 ảnh và tập val 10000 ảnh.
+- Đối với dữ liệu có tổng cộng 60000 ảnh (28x28) trong training set và 10000 ảnh (28x28) trong test set. 
+Shuffle training data để chia tập train thành tập train 50000 ảnh và tập val 10000 ảnh.
+- Normalize data về range (0, 1) bằng cách chia 250.
+- Visualize dữ liệu
+- Augment dữ liệu (phần này hiện thời chưa fit vào model do thời gian không kịp): sử dụng 2 phép crop và horizontal flip để augment dữ liệu.
+
+## Các bước để train CNN model bằng tensorflow:
+- Init computation graph. 
+- Create placeholders for training set X and Y.
+- Init parameters W1 and W2 for model.
+- Forward propagation.
+- Compute cost
+- Create optimizer to minimize cost and tensorflow will perfome back prop for us
+- Init global variables for model
+- Start session and execute above operators per epoch
 
 ## Quá trình cải tiến
 Em sẽ dựa vào độ chính xác trên tập val cho mỗi model để chọn ra model với độ chính xác cao nhất làm model cuối cùng.
+
+![Network architecture](https://drive.google.com/open?id=1jQFR7ROq_6ZO0R_GsJW5X7zyYI0T1S4g)
 
 ### Kiến trúc mạng 1:
 Mỗi CONV block bao gồm: Conv -> Relu và Dropout được dùng như regularization trước FC2.
