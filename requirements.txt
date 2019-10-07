@@ -1,0 +1,10 @@
+tensorflow-gpu==1.13.1
+scipy==1.2.1
+scikit-learn
+opencv-python
+h5py
+matplotlib
+Pillow
+requests
+psutil
+pandas
