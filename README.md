@@ -32,10 +32,9 @@ Model includes 2 CONV + 2 FC:
 - FC2: 10-d vector
 
 ### Config 1:
-Mỗi CONV block bao gồm: Conv -> Relu và Dropout được dùng như regularization trước FC2.
 Each CONV block includes: 1 Conv -> 1 Relu and 1 following Dropout layer (for regularization) except for FC2.
 ### Config 2:
-Each CONV block includes: Conv -> Relu -> BatchNorm and each Pool layer and FC1 associate with 1 Dropout layer afterwards.
+Each CONV block includes: Conv -> Relu -> BatchNorm. Pool layer and FC1 associate with 1 Dropout layer afterwards.
 
 Some hyper-params to fine-tune:
 - kernel size: f1, f2 (3 hoặc 5)
